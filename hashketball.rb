@@ -157,10 +157,10 @@ def team_colors(team)
     team_data.collect do |attribute, data|
       if data == team
         colors = game_hash[location][:colors]
+      end
+    end
   end
-end
-end
-colors
+  colors
 end
 
 def team_names
@@ -200,15 +200,15 @@ hash = {}
    def big_shoe_rebounds
      biggest = nil
      rebounds = nil
-     game_hash.each { |location, team_data|
+     game_hash.each do |location, team_data|
        players = team_data[:players]
-       players.each { |player, player_data|
+       players.each.each do |player, player_data|
          shoe_size = player_data[:shoe]
          if biggest == nil || biggest < shoe_size
            biggest = shoe_size
            rebounds = player_data[:rebounds]
          end
-       }
-     }
+       end
+     end
      return rebounds
    end
