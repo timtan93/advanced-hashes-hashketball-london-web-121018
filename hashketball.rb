@@ -157,10 +157,10 @@ def team_colors(team)
     team_data.collect do |attribute, data|
       if data == team
         colors = game_hash[location][:colors]
+      end
+    end
   end
-end
-end
-colors
+  colors
 end
 
 def team_names
