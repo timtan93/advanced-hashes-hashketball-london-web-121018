@@ -153,8 +153,8 @@ end
 
 def team_colors(team)
   colors = nil
-  game_hash.collect do |location, team_data|
-    team_data.collect do |attribute, data|
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
       if data == team
         colors = game_hash[location][:colors]
       end
@@ -165,7 +165,7 @@ end
 
 def team_names
   teams = []
-   game_hash.collect do |location, team_data|
+   game_hash.each do |location, team_data|
       if team_data.include?(:team_name)
         teams << (game_hash[location][:team_name])
       end
@@ -175,7 +175,7 @@ def team_names
 
 def player_numbers(team_name)
   team_numbers = []
-   game_hash.collect do |location, team_data|
+   game_hash.each do |location, team_data|
     if game_hash[location][:team_name] == team_name
       team_data[:players].collect do |team_players, team_stats|
           team_numbers << (team_stats[:number])
@@ -210,5 +210,7 @@ hash = {}
          end
        end
      end
-     return rebounds
+    rebounds
    end
+   
+   
