@@ -134,20 +134,18 @@ end
 #good_practices
 
     def num_points_scored(name)
-      hashketball = game_hash()
-      if hashketball[:home][:players].has_key?(name)
-        hashketball[:home][:players][name][:points]
-      elsif hashketball[:away][:players].has_key?(name)
-        hashketball[:away][:players][name][:points]
+      if game_hash[:home][:players].has_key?(name)
+        game_hash[:home][:players][name][:points]
+      elsif game_hash[:away][:players].has_key?(name)
+        game_hash[:away][:players][name][:points]
       end
     end
 
   def shoe_size(name)
-  hashketball = game_hash()
-  if hashketball[:home][:players].has_key?(name)
-    hashketball[:home][:players][name][:shoe]
-  elsif hashketball[:away][:players].has_key?(name)
-    hashketball[:away][:players][name][:shoe]
+  if game_hash[:home][:players].has_key?(name)
+    game_hash[:home][:players][name][:shoe]
+  elsif game_hash[:away][:players].has_key?(name)
+    game_hash[:away][:players][name][:shoe]
   end
 end
 
